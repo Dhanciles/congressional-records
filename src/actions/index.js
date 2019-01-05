@@ -8,7 +8,7 @@ export const hasErrored = (check) => ({
   hasErrored: check
 })
 
-export const fetchDataSucces = (data) => ({
+export const fetchDataSuccess = (data) => ({
   type: 'FETCH_DATA_SUCCESS', 
   data
 })

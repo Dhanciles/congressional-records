@@ -24,4 +24,20 @@ describe('actions', () => {
 
     const result = actions.hasErrored(check)
   })
+
+  it('should return a type of FETCH_DATA_SUCCESS with data', () => {
+    const data = [{
+      bill: 'this is a bill', 
+      active: false
+    }]
+
+    const expectedAction = {
+      type: 'FETCH_DATA_SUCCESS', 
+      data
+    }
+
+    const result = actions.fetchDataSuccess(data)
+
+    expect(result).toEqual(expectedAction)
+  })
 })
