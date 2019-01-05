@@ -40,4 +40,17 @@ describe('actions', () => {
 
     expect(result).toEqual(expectedAction)
   })
+
+  it('should return a type of SET_FILTER with a filter', () => {
+    const filter = 'recent bills'
+
+    const expectedAction = {
+      type: 'SET_FILTER', 
+      filter
+    }
+
+    const result = actions.setFilter(filter)
+
+    expect(result).toEqual(expectedAction)
+  })
 })
