@@ -17,3 +17,8 @@ export const seachSubject = (text) => ({
   type: 'SEARCH_SUBJECT', 
   text
 })
+
+export const setFilter = (filter) => ({
+  type: 'SET_FILTER', 
+  filter
+})
