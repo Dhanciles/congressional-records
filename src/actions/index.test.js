@@ -14,4 +14,14 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction)
 
   })
+  it('should return a type of HAS_ERRORED with a boolean', () => {
+    const check = false
+
+    const expectedAction = {
+      type: 'HAS_ERRORED', 
+      hasErrored: check
+    }
+
+    const result = actions.hasErrored(check)
+  })
 })
