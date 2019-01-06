@@ -1,5 +1,5 @@
 import { fetchData } from '../fetchData'; 
-import { isLoading, hasErrored, fetDatatSuccess } from '../../actions/index.js'; 
+import { isLoading, hasErrored, fetDatatSuccess, fetchDataSuccess } from '../../actions/index.js'; 
 import { cleanBill } from '../../helper/helper.js'; 
 import { immigrationBillData } from '../../../mockBillData.js'; 
 
@@ -57,5 +57,27 @@ describe('fetchData', () => {
 
     expect(cleanBill).toHaveBeenCalledW
 
+  })
+
+  it('should dispatch fetchDataSuccess if the response is ok',  async () => {
+    const mockDataToStore = [{
+      billId: mockData.results[0].bill_id, 
+      sponsor: `${mockData.results[0].sponsor_title + mockData.results[0].sponsor_name + ', ' + mockData.results[0].sponsor_state}`, 
+      title: mockData.results[0].title,
+      committee: mockData.results[0].committees, 
+      active: mockData.results[0].active, 
+      lastVote: mockData.results[0].last_vote
+    }]
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true, 
+      json: () => Promise.resolve(mockData)
+    }))
+
+    const thunk = fetchData(mockUrl, mockQuery)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(fetchDataSuccess(mockDataToStore, mockQuery))
   })
 })
