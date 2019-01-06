@@ -29,6 +29,16 @@ describe('fetchData', () => {
     await thunk(mockDispatch)
 
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored(true))
+  })
+  it('should dispatch isLoading(false) if our response is ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true
+    }))
 
+    const thunk = fetchData(mockUrl, mockQuery)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false))
   })
 })
