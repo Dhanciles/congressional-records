@@ -1,0 +1,19 @@
+@import "main";
+
+.explore-menu { 
+  width: 250px; 
+  border-left: 2px solid $color-off-white; 
+  border-right: 2px solid $color-off-white;
+  margin-left: 40px;  
+  h3 {
+    font-family: $font-family-a; 
+    font-size: 2rem; 
+    font-weight: 600; 
+    color: $color-off-white; 
+  }
+  .explore-arrow-icon {
+    color: $color-off-white;
+    height: 40px; 
+    width: 40px; 
+  }
+}
