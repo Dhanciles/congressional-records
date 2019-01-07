@@ -24,11 +24,11 @@ export default class SearchInput extends Component {
   }
 
   render() {
-    const searchIcon = '../src/icons/search.svg'
+    const searchIcon = '../icons/search.svg'
     return (
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange}type="text" name="search" value={this.state.subject} placeholder="Search"/>
-        <img className="search-icon" src={searchIcon} alt="A magnifying glass used to represent a search icon"/>
+        <img className="search-icon" src={ searchIcon } alt={true}/>
       </form>
     )
   }

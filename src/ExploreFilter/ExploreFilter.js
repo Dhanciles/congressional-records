@@ -11,7 +11,7 @@ export default class ExploreFilter extends Component {
   }
 
   render() {
-    const exploreIcon = this.state.selected ? '..src/icons/up-arrow.svg': '../src/icons/down-arrow.svg'
+    const exploreIcon = this.state.selected ? '../icons/up-arrow.svg': '../icons/down-arrow.svg'
     const basicExploreItems = ['Recent Votes', 'Recent Bills', 'Upcoming Bills']
     const popularSubjects = ['Immigration', 'Climate', 'Criminal Justice', 'Police Brutality', 'Higher Education', 'Russia', 'Terrorism', 'Crimes Against Women', 'Fires', 'Mental Health', 'Oil and Gas'] 
     const basicList = basicExploreItems.map(item => (<li className="basic-item">{item}</li>))
@@ -19,13 +19,13 @@ export default class ExploreFilter extends Component {
     const defaultRender = (
       <div className="explore-menu">
         <h3>Explore</h3>
-          <img className="explore-arrow-icon" src={ exploreIcon } alt="Down or up arrows used to represent if the Explore menu has been selected."/>
+          <img className="explore-arrow-icon" src={ exploreIcon } alt={true}/>
       </div>
     )
     const menuRender = (
       <div className="explore-menu">
         <h3>Explore</h3>
-          <img className="explore-arrow-icon" src={ exploreIcon } alt="Down or up arrows used to represent if the Explore menu has been selected."/>
+          <img className="explore-arrow-icon" src={ exploreIcon } alt={true}/>
         <div className="selected-menu-container">
           <article className="base-list">
             <ul>{basicList}</ul>
