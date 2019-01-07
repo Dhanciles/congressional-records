@@ -24,7 +24,7 @@ export default class SearchInput extends Component {
   }
 
   render() {
-    const searchIcon = '../icons/search.svg'
+    const searchIcon = './icons/001-search.svg'
     return (
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange}type="text" name="search" value={this.state.subject} placeholder="Search"/>

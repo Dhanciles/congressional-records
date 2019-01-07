@@ -1,0 +1,22 @@
+@import "main";
+
+form {
+  display: flex; 
+  align-items: center; 
+  input {
+    border: none; 
+    background-color: $color-b; 
+    color: $color-off-white; 
+    font-family: $font-family-a;
+    font-weight: 600; 
+    font-size: 2rem; 
+    text-indent: 2rem; 
+    width: 150px; 
+    &::placeholder { color: $color-off-white} 
+  } 
+  .search-icon {
+    height: 30px; 
+    width: 40px; 
+    margin-top: 4px; 
+  }
+}
