@@ -1,11 +1,10 @@
 import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js'; 
 import { cleanBill } from '../helper/helper.js';
-import { proPublicaKey } from '../constants.js'; 
+import { proPublicaKey } from '../../src/constants.js'; 
 
 
 export const fetchData = (url, query) => {
   const key = proPublicaKey
-  const url = `https://api.propublica.org/congress/v1/bills/subjects/${query}.json`
   return async (dispatch) => {
     try {
       dispatch(isLoading(true))

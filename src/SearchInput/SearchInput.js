@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import '../styles/SearchInput.scss'
+import { connect } from 'react-redux';
+import { fetchData } from '../thunks/fetchData.js'; 
 
 
-export default class SearchInput extends Component {
+
+export class SearchInput extends Component {
   constructor() {
     super()
     this.state = {
@@ -18,6 +21,8 @@ export default class SearchInput extends Component {
   }
 
   handleSubmit = () => {
+    const { subject } = this.state
+    const url = `https://api.propublica.org/congress/v1/bills/subjects/${subject}.json`
     this.setState({
       subject: ''
     })
@@ -33,3 +38,9 @@ export default class SearchInput extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = (dispatch) => ({
+  fetchData: (url, query) => dispatch(fetchData(url, query))
+})
+
+export default connect(null, mapDispatchToProps)(SearchInput)

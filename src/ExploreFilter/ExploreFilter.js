@@ -49,7 +49,6 @@ export default class ExploreFilter extends Component {
       return (
         componentToRender
       )
-   
   }
 }
 
