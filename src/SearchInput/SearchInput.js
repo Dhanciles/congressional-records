@@ -25,7 +25,7 @@ export class SearchInput extends Component {
     const { subject } = this.state
 
     const url = `https://api.propublica.org/congress/v1/bills/subjects/${subject}.json`
-    console.log(this.props.fetchData(url, subject))
+    // console.log(this.props.fetchData(url, subject))
     await this.props.fetchData(url, subject)
   }
 
