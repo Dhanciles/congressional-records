@@ -1,5 +1,5 @@
-export const cleanBill = async (data) => {
-  return data.results.map(item => ({
+export const cleanBill = (data) => {
+  return data.results.map((item) => ({
     billId: item.bill_id,
     sponsor: `${item.sponsor_title + item.sponsor_name + ', ' + item.sponsor_state}`, 
     title: item.title, 

@@ -2,8 +2,7 @@ import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js';
 import { cleanBill } from '../helper/helper.js';
 import { proPublicaKey } from '../../src/constants.js'; 
 
-
-export const fetchData = (url, query) => {
+export const fetchData = async (url, query) => { 
   const key = proPublicaKey
   return async (dispatch) => {
     try {
@@ -13,12 +12,13 @@ export const fetchData = (url, query) => {
           'X-API-KEY': key
         }
       })
+      console.log(response)
       if(!response.ok) {
         throw Error(response.statusText)
       }
       dispatch(isLoading(false))
       const data = await response.json()
-      const dataToStore = await cleanBill(data)
+      const dataToStore = cleanBill(data)
       dispatch(fetchDataSuccess(dataToStore, query))
     } catch(error) {
       dispatch(hasErrored(true))

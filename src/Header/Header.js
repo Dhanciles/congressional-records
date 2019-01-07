@@ -1,5 +1,5 @@
 import React from 'react'
-import ExploreFilter   from '../ExploreFilter/ExploreFilter.js'; 
+import ExploreFilter  from '../ExploreFilter/ExploreFilter.js'; 
 import SearchInput  from '../SearchInput/SearchInput.js'; 
 import '../styles/Header.scss'; 
 
