@@ -6,15 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'; 
 import { rootReducer } from './reducers/index.js'; 
 import { createStore, applyMiddleware } from 'redux'; 
-import { composeWithDevTools } from 'redux'; 
+import { composeWithDevTools } from 'redux-devtools-extension'; 
 import thunk from 'redux-thunk'; 
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 const wrapper = (
-  <Providor store={store}>
+  <Provider store={store}>
     <App/>
-  </Providor>
+  </Provider>
 )
 
 
