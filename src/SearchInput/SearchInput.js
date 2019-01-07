@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import '../styles/SearchInput.scss'
+
 
 export class SearchInput extends Component {
   constructor() {
@@ -26,7 +28,7 @@ export class SearchInput extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange}type="text" name="search" value={this.state.subject} placeholder="Search"/>
-        <img className="search-icon" src={searchIcon}/>
+        <img className="search-icon" src={searchIcon} alt="A magnifying glass used to represent a search icon"/>
       </form>
     )
   }

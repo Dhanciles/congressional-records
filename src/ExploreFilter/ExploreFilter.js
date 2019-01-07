@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { uuid } from 'uuid'
-// import '../src/styles/ExploreFilter.scss'
+import '../styles/ExploreFilter.scss'
 
 export class ExploreFilter extends Component {
   constructor() {

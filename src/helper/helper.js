@@ -8,3 +8,4 @@ export const cleanBill = async (data) => {
     lastVote: item.last_vote
   }))
 }
+
