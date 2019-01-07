@@ -28,7 +28,7 @@ export default class SearchInput extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange}type="text" name="search" value={this.state.subject} placeholder="Search"/>
-        <img className="search-icon" src={ searchIcon } alt={true}/>
+        <img className="search-icon" src={ searchIcon } alt='magnifying glass'/>
       </form>
     )
   }
