@@ -1,6 +1,6 @@
 import React from 'react'
-import { ExploreFilter } from '../ExploreFilter/ExploreFilter.js'; 
-import { SearchInput } from '../SearchInput/SearchInput.js'; 
+import ExploreFilter   from '../ExploreFilter/ExploreFilter.js'; 
+import SearchInput  from '../SearchInput/SearchInput.js'; 
 
 export const Header = () => {
   return (

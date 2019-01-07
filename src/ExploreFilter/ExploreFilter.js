@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { uuid } from 'uuid'
+// import { uuid } from 'uuid'
 import '../styles/ExploreFilter.scss'
 
-export class ExploreFilter extends Component {
+export default class ExploreFilter extends Component {
   constructor() {
     super()
     this.state = {
@@ -14,18 +14,18 @@ export class ExploreFilter extends Component {
     const exploreIcon = this.state.selected ? '..src/icons/up-arrow.svg': '../src/icons/down-arrow.svg'
     const basicExploreItems = ['Recent Votes', 'Recent Bills', 'Upcoming Bills']
     const popularSubjects = ['Immigration', 'Climate', 'Criminal Justice', 'Police Brutality', 'Higher Education', 'Russia', 'Terrorism', 'Crimes Against Women', 'Fires', 'Mental Health', 'Oil and Gas'] 
-    const basicList = basicExploreItems.map(item => (<li className="basic-item" key={uuid()}>{item}</li>))
-    const popularList = popularSubjects.map(subject => (<li className="popular-subject" key={uuid()}>{subject}</li>))
+    const basicList = basicExploreItems.map(item => (<li className="basic-item">{item}</li>))
+    const popularList = popularSubjects.map(subject => (<li className="popular-subject">{subject}</li>))
     const defaultRender = (
       <div className="explore-menu">
         <h3>Explore</h3>
-          <img className="explore-arrow-icon" src={exploreIcon} alt="Down or up arrows used to represent if the Explore menu has been selected."/>
+          <img className="explore-arrow-icon" src={ exploreIcon } alt="Down or up arrows used to represent if the Explore menu has been selected."/>
       </div>
     )
     const menuRender = (
       <div className="explore-menu">
         <h3>Explore</h3>
-          <img className="explore-arrow-icon" src={exploreIcon} alt="Down or up arrows used to represent if the Explore menu has been selected."/>
+          <img className="explore-arrow-icon" src={ exploreIcon } alt="Down or up arrows used to represent if the Explore menu has been selected."/>
         <div className="selected-menu-container">
           <article className="base-list">
             <ul>{basicList}</ul>
@@ -38,10 +38,10 @@ export class ExploreFilter extends Component {
     )
     if (this.state.selected) {
       return (
-      {menuRender}
+      menuRender
       )
     } return (
-      {defaultRender}
+      defaultRender
     )
   }
 }
