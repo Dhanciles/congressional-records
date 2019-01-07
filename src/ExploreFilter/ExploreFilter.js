@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../src/styles/ExploreFilter.scss'
+// import '../src/styles/ExploreFilter.scss'
 
 export class ExploreFilter extends Component {
   constructor() {
