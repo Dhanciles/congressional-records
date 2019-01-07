@@ -1,10 +1,15 @@
 @import "main";
 
-.explore-menu { 
+.explore-menu {
   width: 250px; 
   border-left: 2px solid $color-off-white; 
   border-right: 2px solid $color-off-white;
-  margin-left: 40px;  
+  margin-left: 60px;  
+  .container {
+    display: flex; 
+    justify-content: space-around;
+    margin-top: 30px;  
+  } 
   h3 {
     font-family: $font-family-a; 
     font-size: 2rem; 
@@ -12,7 +17,7 @@
     color: $color-off-white; 
   }
   .explore-arrow-icon {
-    color: $color-off-white;
+    margin-top: 4px; 
     height: 40px; 
     width: 40px; 
   }

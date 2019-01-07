@@ -11,7 +11,7 @@ export default class ExploreFilter extends Component {
   }
 
   render() {
-    let exploreIcon = this.state.selected ? './icons/002-up-arrow.svg' : './icons/001-down-arrow.svg'; 
+    let exploreIcon = this.state.selected ? './icons/003-up-arrow.svg' : './icons/002-down-arrow.svg'; 
 
 
     const basicExploreItems = ['Recent Votes', 'Recent Bills', 'Upcoming Bills']
