@@ -20,7 +20,6 @@ export const fetchData = (url, query) => {
       const dataToStore = cleanBill(data, query)
       dispatch(fetchDataSuccess(dataToStore, query))
     } catch(error) {
-      console.log(error)
       dispatch(hasErrored(true))
     }
   }

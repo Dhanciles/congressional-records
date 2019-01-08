@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../styles/SearchInput.scss'
 import { connect } from 'react-redux';
 import { fetchData } from '../thunks/fetchData.js'; 
+import { queryCheck } from '../helper/helper.js';
+
 
 export class SearchInput extends Component {
   constructor() {
@@ -18,11 +20,12 @@ export class SearchInput extends Component {
     })
   }
 
-  handleSubmit = async (e) => {
-    e.preventDefault()
+  handleSubmit =  () => {
+    debugger; 
     const { subject } = this.state
-    const url = `https://api.propublica.org/congress/v1/bills/subjects/${subject}.json`
-    await this.props.fetchData(url, subject)
+    const newSubject = queryCheck(subject)
+    const url = `https://api.propublica.org/congress/v1/bills/subjects/${newSubject}.json`
+    this.props.fetchData(url, newSubject)
   }
 
   render() {
