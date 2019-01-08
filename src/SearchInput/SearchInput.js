@@ -3,8 +3,6 @@ import '../styles/SearchInput.scss'
 import { connect } from 'react-redux';
 import { fetchData } from '../thunks/fetchData.js'; 
 
-
-
 export class SearchInput extends Component {
   constructor() {
     super()

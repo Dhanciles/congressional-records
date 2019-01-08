@@ -14,7 +14,6 @@ export class ExploreFilter extends Component {
   }
 
   toggleMenu = (e) => {
-    e.preventDefault()
     this.setState({
       selected: !this.state.selected
     })
@@ -23,6 +22,7 @@ export class ExploreFilter extends Component {
   handleClick = async (item) => {
     const url = checkBaseItemName(item)
     await this.props.fetchData(url, item)
+    this.toggleMenu()
   }
 
   render() {
@@ -34,7 +34,7 @@ export class ExploreFilter extends Component {
     
     const basicList = basicExploreItems.map(item => (<li name={item} onClick={() => this.handleClick(item)} key={uuid()} className="basic-item">{item}</li>))
 
-    const popularList = popularSubjects.map(subject => (<li key={uuid()}className="popular-subject">{subject}</li>))
+    const popularList = popularSubjects.map(subject => (<li name={subject}key={uuid()}className="popular-subject">{subject}</li>))
 
     const defaultRender = (
       <div className="explore-menu">
