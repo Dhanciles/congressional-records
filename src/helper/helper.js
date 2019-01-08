@@ -60,3 +60,7 @@ export const queryCheck = (text) => {
   return newText
 }
 
+export const renderQuery = (query) => {
+  
+}
+

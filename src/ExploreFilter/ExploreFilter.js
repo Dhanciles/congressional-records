@@ -5,6 +5,7 @@ import { checkBaseItemName } from '../helper/helper.js';
 import { connect } from 'react-redux';
 import { fetchData } from '../thunks/fetchData.js'; 
 import { queryCheck } from '../helper/helper.js';
+import { setFilter } from '../actions/index.js'; 
 
 export class ExploreFilter extends Component {
   constructor() {
@@ -21,6 +22,7 @@ export class ExploreFilter extends Component {
   }
 
   handleBasicListSelection = (item) => {
+    this.props.updateSelection(item)
     const url = checkBaseItemName(item)
     this.props.fetchData(url, item)
     this.toggleMenu()
@@ -28,6 +30,7 @@ export class ExploreFilter extends Component {
 
   handlePopularListSelection = (subject) => {
     const newSubject = queryCheck(subject)
+    this.props.updateSelection(newSubject)
     const url = `https://api.propublica.org/congress/v1/bills/subjects/${newSubject}.json`
     this.props.fetchData(url, newSubject)
   } 
@@ -77,7 +80,8 @@ export class ExploreFilter extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  fetchData: (url, query) => dispatch(fetchData(url, query))
+  fetchData: (url, query) => dispatch(fetchData(url, query)), 
+  updateSelection: (selection) => dispatch(setFilter(selection))
 })
 
 export default connect(null, mapDispatchToProps)(ExploreFilter)

@@ -21,6 +21,10 @@ export class ContentContainer extends Component {
 }
 
 export const mapStateToProps = (state) => ({
+  content: state.data
+})
+
+export const mapStateToProps = (state) => ({
   data: state.data, 
   error: state.error,
   loading: state.loading 

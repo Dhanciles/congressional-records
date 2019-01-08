@@ -7,6 +7,6 @@ import { hasErroredReducer } from './hasErrored-reducer'
 export const rootReducer = combineReducers({
   loading: isLoadingReducer, 
   error: hasErroredReducer, 
-  filterSelection: setFilterReducer, 
+  selection: setFilterReducer, 
   data: dataReducer
 })
