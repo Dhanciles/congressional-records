@@ -1,4 +1,38 @@
-export const cleanBill = (data) => {
+export const cleanBill = (data, query) => {
+ switch(query) {
+   case 'Recent Bills': 
+    return exploreFilterBills(data)
+   case 'Upcoming Bills': 
+    return exploreFilterBills(data)
+   case !'Upcoming Bills' || !'Recent Bills': 
+    return searchAndPopularBills(data)
+   default: 
+    return undefined
+ }
+}
+
+export const exploreFilterBills = (data) => {
+  const billsNeeded = exploreAdditionalCleaner(data)
+  return billsNeeded.map(item => ({
+    billId: item.bill_id,
+    sponsor: `${item.sponsor_title + item.sponsor_name + ', ' + item.sponsor_state}`, 
+    title: item.title, 
+    committee: item.committees, 
+    active: item.active, 
+    lastVote: item.last_vote
+  }))
+}
+
+export const exploreAdditionalCleaner = (data) => {
+   return data.results.reduce((arr, item) => {
+    item.bills.forEach(bill => {
+      arr.push(bill)
+    })
+   return arr
+ }, [])
+}
+
+export const searchAndPopularBills = (data) => {
   return data.results.map((item) => ({
     billId: item.bill_id,
     sponsor: `${item.sponsor_title + item.sponsor_name + ', ' + item.sponsor_state}`, 
