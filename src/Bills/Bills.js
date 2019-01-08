@@ -1,6 +1,6 @@
 import React from 'react'; 
 import '../styles/Bills.scss'; 
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 export const Bills = () => {
   return (
