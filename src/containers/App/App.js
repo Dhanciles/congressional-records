@@ -12,18 +12,17 @@ export class App extends Component {
 }
 
 render() {
-    const contentToRender = this.props.selection ?  <ContentContainer /> : <LandingPage />
     return (
       <div className="App">
-        <Header />        
-        {contentToRender}
+        <Header />       
+        <LandingPage />
       </div>
     );
   }
 }
 
 export const mapStateToProps = (state) => ({
-  selection: state.selection
+  isLoading: state.isLoading
 })
 
 export default connect(mapStateToProps)(App)

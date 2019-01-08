@@ -11,20 +11,14 @@ export class ContentContainer extends Component {
   }
   
 
-  render() {
-    let bills;
-     if(this.props.data) {
-      bills = this.props.data.map(item => <Bills key={uuid()} {...item}/>)
-     }
-      
+  render() {  
+    const bills = this.props.data.map(item => <Bills key={uuid()} {...item}/>)
     return (
       <main className="content-container">
         <article className="search-subject-container">
           <h1>Searched - <span>{this.props.selection}</span></h1>
         </article>
-        { this.props.data && 
-          {bills} 
-        } 
+          {bills}  
       </main>
     )
   }
