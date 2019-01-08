@@ -20,19 +20,19 @@ export class SearchInput extends Component {
     })
   }
 
-  handleSubmit =  () => {
-    debugger; 
+  handleSubmit =  async (e) => {
+    e.preventDefault()
     const { subject } = this.state
     const newSubject = queryCheck(subject)
     const url = `https://api.propublica.org/congress/v1/bills/subjects/${newSubject}.json`
-    this.props.fetchData(url, newSubject)
+    await this.props.fetchData(url, newSubject)
   }
 
   render() {
     const { subject } = this.state
     const searchIcon = './icons/001-search.svg'
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={(e) => this.handleSubmit(e)}>
         <input onChange={this.handleChange}type="text" name="search" value={subject} placeholder="Search"/>
         <img className="search-icon" src={searchIcon} alt='magnifying glass'/>
       </form>

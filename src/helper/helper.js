@@ -4,10 +4,8 @@ export const cleanBill = (data, query) => {
     return exploreFilterBills(data)
    case 'Upcoming Bills': 
     return exploreFilterBills(data)
-   case !'Upcoming Bills' || !'Recent Bills': 
-    return searchAndPopularBills(data)
    default: 
-    return undefined
+    return searchAndPopularBills(data)
  }
 }
 

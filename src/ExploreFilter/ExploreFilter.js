@@ -27,7 +27,6 @@ export class ExploreFilter extends Component {
   }
 
   handlePopularListSelection = (subject) => {
-    debugger; 
     const newSubject = queryCheck(subject)
     const url = `https://api.propublica.org/congress/v1/bills/subjects/${newSubject}.json`
     this.props.fetchData(url, newSubject)
