@@ -9,7 +9,16 @@ export const cleanBill = (data) => {
   }))
 }
 
-export const checkBaseItemName = (name) => {
-  // if (name ===)
+export const checkBaseItemName = (item) => {
+  switch(item) {
+    case 'Recent Bills': 
+      return 'https://api.propublica.org/congress/v1/115/both/bills/introduced.json'
+    case 'Upcoming Bills': 
+      return 'https://api.propublica.org/congress/v1/bills/upcoming/house.json'
+    case 'Recent Votes': 
+      return 'https://api.propublica.org/congress/v1/house/votes/recent.json'
+    default: 
+      return undefined
+  }
 }
 

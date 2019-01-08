@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import  uuid  from 'uuid'
 import '../styles/ExploreFilter.scss'
+import { checkBaseItemName } from '../helper/helper.js';
+
 
 export default class ExploreFilter extends Component {
   constructor() {
@@ -9,11 +11,6 @@ export default class ExploreFilter extends Component {
       selected: false
     }
   }
-  // base items -
-  // https://api.propublica.org/congress/v1/115/both/bills/introduced.json - Recent Bills 
-  // https://api.propublica.org/congress/v1/bills/upcoming/house.json - Upcoming Bills
-  // https://api.propublica.org/congress/v1/house/votes/recent.json - Recent Votes 
-
 
   toggleMenu = (e) => {
     e.preventDefault()
@@ -23,7 +20,8 @@ export default class ExploreFilter extends Component {
   }
 
   handleClick = (item) => {
-    console.log(item)
+    const url = checkBaseItemName(item)
+    console.log(url)
   }
 
   render() {
