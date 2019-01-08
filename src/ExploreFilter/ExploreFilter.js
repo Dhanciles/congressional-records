@@ -47,6 +47,7 @@ export default class ExploreFilter extends Component {
             <ul>{basicList}</ul>
           </article>
           <article className="popular-subjects-list">
+            <h3 className="popular-subject-title">Popular Subjects</h3>
             <ul>{popularList}</ul>
           </article>
         </div>

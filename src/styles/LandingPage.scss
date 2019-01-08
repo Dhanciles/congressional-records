@@ -1,5 +1,11 @@
 @import "main";
 
+main {
+  display: flex;  
+  flex-direction: column;  
+  margin-left: 800px; 
+}
+
 h1 {
   font-family: $font-family-b; 
   font-weight: 800; 
