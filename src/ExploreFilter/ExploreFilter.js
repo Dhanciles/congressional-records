@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import  uuid  from 'uuid'
 import '../styles/ExploreFilter.scss'
 import { checkBaseItemName } from '../helper/helper.js';
+import { connect } from 'react-redux';
+import { fetchData } from '../thunks/fetchData.js'; 
 
-
-export default class ExploreFilter extends Component {
+export class ExploreFilter extends Component {
   constructor() {
     super()
     this.state = {
@@ -19,9 +20,9 @@ export default class ExploreFilter extends Component {
     })
   }
 
-  handleClick = (item) => {
+  handleClick = async (item) => {
     const url = checkBaseItemName(item)
-    console.log(url)
+    await this.props.fetchData(url, item)
   }
 
   render() {
@@ -68,3 +69,8 @@ export default class ExploreFilter extends Component {
   }
 }
 
+export const mapDispatchToProps = (dispatch) => ({
+  fetchData: (url, query) => dispatch(fetchData(url, query))
+})
+
+export default connect(null, mapDispatchToProps)(ExploreFilter)
