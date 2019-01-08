@@ -10,6 +10,13 @@ export default class ExploreFilter extends Component {
     }
   }
 
+  toggleMenu = (e) => {
+    e.preventDefault()
+    this.setState({
+      selected: !this.state.selected
+    })
+  }
+
   render() {
     let exploreIcon = this.state.selected ? './icons/003-up-arrow.svg' : './icons/002-down-arrow.svg'; 
 
@@ -23,7 +30,7 @@ export default class ExploreFilter extends Component {
     const defaultRender = (
       <div className="explore-menu">
         <div className="container">
-          <h3>Explore</h3>
+          <h3 onClick={this.toggleMenu}>Explore</h3>
           <img className="explore-arrow-icon" src={exploreIcon} alt='arrow down'/>
         </div>
       </div>
@@ -32,7 +39,7 @@ export default class ExploreFilter extends Component {
     const menuRender = (
       <div className="explore-menu">
         <div className="container">
-          <h3>Explore</h3>
+          <h3 onClick={this.toggleMenu}>Explore</h3>
           <img className="explore-arrow-icon" src={exploreIcon} alt='arrow down'/>
         </div> 
         <div className="selected-menu-container">
