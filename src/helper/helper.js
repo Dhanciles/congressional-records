@@ -60,7 +60,8 @@ export const queryCheck = (text) => {
   return newText
 }
 
-export const renderQuery = (query) => {
-  
+export const renderQuery = (query, data) => {
+  const keys = Object.keys(data)
+  return keys.find(key => ((data[key] === query)))
 }
 

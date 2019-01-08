@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import  uuid  from 'uuid'
-import '../styles/ExploreFilter.scss'
-import { checkBaseItemName } from '../helper/helper.js';
+import '../../styles/ExploreFilter.scss'
+import { checkBaseItemName } from '../../helper/helper.js';
 import { connect } from 'react-redux';
-import { fetchData } from '../thunks/fetchData.js'; 
-import { queryCheck } from '../helper/helper.js';
-import { setFilter } from '../actions/index.js'; 
+import { fetchData } from '../../thunks/fetchData.js'; 
+import { queryCheck } from '../../helper/helper.js';
+import { setFilter } from '../../actions/index.js'; 
 
 export class ExploreFilter extends Component {
   constructor() {

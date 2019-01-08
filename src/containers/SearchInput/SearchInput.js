@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import '../styles/SearchInput.scss'
+import '../../styles/SearchInput.scss'
 import { connect } from 'react-redux';
-import { fetchData } from '../thunks/fetchData.js'; 
-import { queryCheck } from '../helper/helper.js';
-import { setFilter } from '../actions/index.js'; 
+import { fetchData } from '../../thunks/fetchData.js'; 
+import { queryCheck } from '../../helper/helper.js';
+import { setFilter } from '../../actions/index.js'; 
 
 
 export class SearchInput extends Component {
