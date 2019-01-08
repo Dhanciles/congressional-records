@@ -9,12 +9,21 @@ export default class ExploreFilter extends Component {
       selected: false
     }
   }
+  // base items -
+  // https://api.propublica.org/congress/v1/115/both/bills/introduced.json - Recent Bills 
+  // https://api.propublica.org/congress/v1/bills/upcoming/house.json - Upcoming Bills
+  // https://api.propublica.org/congress/v1/house/votes/recent.json - Recent Votes 
+
 
   toggleMenu = (e) => {
     e.preventDefault()
     this.setState({
       selected: !this.state.selected
     })
+  }
+
+  handleClick = (item) => {
+    console.log(item)
   }
 
   render() {
@@ -24,7 +33,8 @@ export default class ExploreFilter extends Component {
     const basicExploreItems = ['Recent Votes', 'Recent Bills', 'Upcoming Bills']
     const popularSubjects = ['Immigration', 'Climate', 'Criminal Justice', 'Police Brutality', 'Higher Education', 'Russia', 'Terrorism', 'Crimes Against Women', 'Fires', 'Mental Health', 'Oil and Gas'] 
     
-    const basicList = basicExploreItems.map(item => (<li key={uuid()} className="basic-item">{item}</li>))
+    const basicList = basicExploreItems.map(item => (<li name={item} onClick={() => this.handleClick(item)} key={uuid()} className="basic-item">{item}</li>))
+
     const popularList = popularSubjects.map(subject => (<li key={uuid()}className="popular-subject">{subject}</li>))
 
     const defaultRender = (
@@ -47,7 +57,7 @@ export default class ExploreFilter extends Component {
             <ul>{basicList}</ul>
           </article>
           <article className="popular-subjects-list">
-            <h3 className="popular-subject-title">Popular Subjects</h3>
+            <h3 className="popular  -subject-title">Popular Subjects</h3>
             <ul>{popularList}</ul>
           </article>
         </div>

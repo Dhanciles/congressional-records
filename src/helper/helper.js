@@ -9,3 +9,7 @@ export const cleanBill = (data) => {
   }))
 }
 
+export const checkBaseItemName = (name) => {
+  // if (name ===)
+}
+
