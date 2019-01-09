@@ -41,4 +41,13 @@ describe('SearchInput', () => {
     expect(wrapper.handleSubmit).toHaveBeenCalled
 
   })
+  it('should invoke updateSelection with the correct params', () => {
+    const event = {target: {name: 'search', value: 'Health Care' }}
+    
+    wrapper.setState({subject: 'Health Care'})
+    wrapper.instance().handleSubmit(event)
+
+    expect(mockUpdateSelection).toHaveBeenCalledWith('Heath Care')
+  })
+
 })
