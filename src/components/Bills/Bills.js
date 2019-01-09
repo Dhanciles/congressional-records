@@ -10,14 +10,20 @@ export class Bills extends Component {
     const status = lastVote === null ? false : true
     return (
       <article className="bill-container">
-        <p className="bill-id">{billId}</p>
-        <p className="chamber">Chamber - House</p>
-        <p className="sponsor">{sponsor}</p>
-        <img  className="bookmark-icon"src='./icons/bookmark.svg' alt='bookmark'/>
-        <h4 className="bill-title">{title}</h4>
-        <p className="commitees">{committee}</p>
-        <p className="status"> Active - {status} </p>
-        <p className="vote-infromation">{lastVote}</p>
+        <div className="top-level-card">
+          <p className="bill-id">{billId}</p>
+          <p className="chamber">Chamber - House</p>
+          <p className="sponsor">{sponsor}</p>
+          <img  className="bookmark-icon"src='./icons/bookmark.svg' alt='bookmark'/>
+        </div>
+        <div className="bill-title-container">
+          <h4 className="bill-title">{title}</h4>
+        </div>
+        <div className="bottom-level-card">
+          <p className="commitees">{committee}</p>
+          <p className="status"> Active - {status} </p>
+          <p className="vote-infromation">{lastVote}</p>
+        </div>
       </article>
     )
   }
