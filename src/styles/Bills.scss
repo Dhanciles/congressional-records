@@ -1,0 +1,19 @@
+@import "main";
+
+* {
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.bill-container {
+  background-color:  $color-grey; 
+  height: 200px; 
+  // width: 60%; 
+  margin: 20px 0 20px 0;  
+}
+
+.bookmark-icon {
+  height: 50px; 
+  width: 50px; 
+}

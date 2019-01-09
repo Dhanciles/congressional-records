@@ -13,7 +13,7 @@ export class Bills extends Component {
         <p className="bill-id">{billId}</p>
         <p className="chamber">Chamber - House</p>
         <p className="sponsor">{sponsor}</p>
-        <img src='./icons/bookmark.svg' alt='bookmark'/>
+        <img  className="bookmark-icon"src='./icons/bookmark.svg' alt='bookmark'/>
         <h4 className="bill-title">{title}</h4>
         <p className="commitees">{committee}</p>
         <p className="status"> Active - {status} </p>

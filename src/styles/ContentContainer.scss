@@ -1,0 +1,13 @@
+@import "main";
+* {
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.content-container {
+  display: flex; 
+  flex-direction: column; 
+  background-color: $color-a; 
+}
+

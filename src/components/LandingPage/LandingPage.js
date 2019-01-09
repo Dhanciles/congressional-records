@@ -3,7 +3,7 @@ import '../../styles/LandingPage.scss';
 
 export const LandingPage = () => {
   return (
-    <main>
+    <main className="landing-page-container">
       <article className="title-container">
         <h1>Congressional Records</h1>
       </article>
