@@ -15,10 +15,10 @@ export const fetchData = (url, query) => {
       if(!response.ok) {
         throw Error(response.statusText)
       }
-      dispatch(isLoading(false))
       const data = await response.json()
       const dataToStore = cleanBill(data, query)
       dispatch(fetchDataSuccess(dataToStore, query))
+      dispatch(isLoading(false))
     } catch(error) {
       dispatch(hasErrored(true))
     }

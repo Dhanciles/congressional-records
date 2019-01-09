@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 import { fetchData } from '../../thunks/fetchData.js'; 
 import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
-import { Link } from 'react-router-dom'; 
+import { NavLink } from 'react-router-dom'; 
+import { withRouter } from "react-router-dom";
 
 export class ExploreFilter extends Component {
   constructor() {
@@ -29,12 +30,7 @@ export class ExploreFilter extends Component {
     this.toggleMenu()
   }
 
-  handlePopularListSelection = (subject) => {
-    const newSubject = queryCheck(subject)
-    this.props.updateSelection(newSubject)
-    const url = `https://api.propublica.org/congress/v1/bills/subjects/${newSubject}.json`
-    this.props.fetchData(url, newSubject)
-  } 
+  
 
   render() {
     let exploreIcon = this.state.selected ? './icons/003-up-arrow.svg' : './icons/002-down-arrow.svg'; 
@@ -43,9 +39,9 @@ export class ExploreFilter extends Component {
     const basicExploreItems = ['Recent Votes', 'Recent Bills', 'Upcoming Bills']
     const popularSubjects = ['Immigration', 'Climate', 'Criminal Justice', 'Police Brutality', 'Higher Education', 'Russia', 'Terrorism', 'Crimes Against Women', 'Fires', 'Mental Health', 'Oil and Gas'] 
     
-    const basicList = basicExploreItems.map(item => (<Link to={item}><li name={item} onClick={() => this.handleBasicListSelection(item)} key={uuid()} className="basic-item">{item}</li></Link>))
+    const basicList = basicExploreItems.map(item => (<NavLink key={uuid()} to={item}><li name={item} key={uuid()} className="basic-item">{item}</li></NavLink>))
 
-    const popularList = popularSubjects.map(subject => (<Link to={subject}><li onClick={() => this.handlePopularListSelection(subject)} name={subject} key={uuid()} className="popular-subject">{subject}</li></Link>))
+    const popularList = popularSubjects.map(subject => (<NavLink key={uuid()} to={subject}><li name={subject}  className="popular-subject">{subject}</li></NavLink>))
 
     const defaultRender = (
       <div className="explore-menu">
@@ -86,4 +82,6 @@ export const mapDispatchToProps = (dispatch) => ({
   updateSelection: (selection) => dispatch(setFilter(selection))
 })
 
-export default connect(null, mapDispatchToProps)(ExploreFilter)
+export default withRouter(
+  connect(null, mapDispatchToProps)(ExploreFilter)
+  )
