@@ -36,7 +36,6 @@ export class ContentContainer extends Component {
             <LandingPage />
         )
     } else {
-      debugger; 
     const renderedBills = this.dataFromProps().map(item => (<Bills key={uuid()} {...item}/>))
      return (
       <main className="content-container">

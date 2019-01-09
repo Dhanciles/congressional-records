@@ -57,7 +57,6 @@ export const checkBaseItemName = (item) => {
 export const queryCheck = (text) => {
   const hasSpace = text.includes(' ')
   const newText  = hasSpace ? text.split(' ').join('-').toLowerCase() : text.toLowerCase()
-  debugger; 
   return newText
 }
 
