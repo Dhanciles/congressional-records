@@ -4,6 +4,7 @@ import { Header } from '../../components/Header/Header';
 import { LandingPage } from '../../components/LandingPage/LandingPage'; 
 import { connect } from 'react-redux';
 import { ContentContainer } from '../ContentContainer/ContentContainer'; 
+import { Route, Switch } from 'react-router-dom'
 
 
 export class App extends Component {
@@ -12,16 +13,21 @@ export class App extends Component {
 }
 
 render() {
+  const { path } = this.props.selection
     return (
       <div className="App">
-        <Header />       
-        <LandingPage />
+        <Header /> 
+        <Swith>
+          <Route exact path='/' component={<LandingPage location='/' />}/>
+          <Route path={`${path}`} render={() => <ContentContainer location ='/${path}'/>}/>
+        </Swith>
       </div>
     );
   }
 }
 
 export const mapStateToProps = (state) => ({
+  selection: state.selection, 
   isLoading: state.isLoading
 })
 
