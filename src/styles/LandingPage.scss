@@ -3,7 +3,9 @@
 .landing-page-container {
   display: flex;  
   flex-direction: column;  
-  margin-left: 800px; 
+  align-items: center; 
+  justify-content: space-around;
+  margin-top: 50px;  
 }
 
 h1 {

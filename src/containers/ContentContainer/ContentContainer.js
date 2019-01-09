@@ -15,7 +15,7 @@ export class ContentContainer extends Component {
     super(props)
   }
 
-  componentDidMount() {
+  componentDidMount() {   
     this.handlePopularListSelection(this.props.tacos)
   }
 
