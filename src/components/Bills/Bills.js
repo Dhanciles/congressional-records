@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import '../../styles/Bills.scss'; 
+import PropTypes from 'prop-types'
 
 export class Bills extends Component {
   constructor() {
@@ -27,6 +28,15 @@ export class Bills extends Component {
       </article>
     )
   }
+}
+
+Bills.propTypes = {
+  billId: PropTypes.string, 
+  sponsor: PropTypes.string, 
+  title: PropTypes.string, 
+  committee: PropTypes.string, 
+  active: PropTypes.string, 
+  lastVote: PropTypes.string
 }
 
 
