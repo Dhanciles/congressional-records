@@ -17,13 +17,21 @@ describe('SearchInput', () => {
     
     expect(wrapper).toMatchSnapshot()
   })
-  it('should update call handleChange on OnChange event', () => {
+  it('should update call handleChange on onChange event', () => {
     wrapper.handleChange = jest.fn()
     const event = {target: {name: 'search', value: 'health-care' }}
+    
     wrapper.find('.search-input').simulate('change', event)
-     
-
+  
     expect(wrapper.handleChange).toHaveBeenCalled
+  })
+  it('should update state when handleChange is invoked', () => {
+    const expected = {subject: 'health-care'}
+    const event = {target: {name: 'search', value: 'health-care' }}
+
+    wrapper.instance().handleChange(event)
+
+    expect(wrapper.state()).toEqual(expected)
 
 
   })
