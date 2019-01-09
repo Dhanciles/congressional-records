@@ -8,6 +8,7 @@ import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
 import { NavLink } from 'react-router-dom'; 
 import { withRouter } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 export class ExploreFilter extends Component {
   constructor() {
@@ -31,7 +32,6 @@ export class ExploreFilter extends Component {
   }
 
   
-
   render() {
     let exploreIcon = this.state.selected ? './icons/003-up-arrow.svg' : './icons/002-down-arrow.svg'; 
 
@@ -84,4 +84,10 @@ export const mapDispatchToProps = (dispatch) => ({
 
 export default withRouter(
   connect(null, mapDispatchToProps)(ExploreFilter)
-  )
+)
+
+ExploreFilter.propTypes = {
+  fetchData: PropTypes.func.isRequired, 
+  updateSelection: PropTypes.func.isRequired
+}
+
