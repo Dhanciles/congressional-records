@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import  ContentContainer  from '../ContentContainer/ContentContainer'; 
 import { Route, Switch } from 'react-router-dom'
 import { withRouter } from "react-router-dom";
+import PropTypes from 'prop-types'
+
 
 
 export class App extends Component {
@@ -36,5 +38,10 @@ export const mapStateToProps = (state) => ({
 export default withRouter(
   connect(mapStateToProps)(App)
   )
+
+App.propTypes = {
+  selection: PropTypes.string.isRequired, 
+  isLoading: PropTypes.bool.isRequired
+}
 
 
