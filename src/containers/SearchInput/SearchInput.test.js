@@ -32,8 +32,13 @@ describe('SearchInput', () => {
     wrapper.instance().handleChange(event)
 
     expect(wrapper.state()).toEqual(expected)
+  })
+  it('should invoke handleSubmit when the subject has been given', () => {
+    const event = {target: {}, preventDefault: () => {}}
 
+    wrapper.find('.search-input').simulate('keypress', {key: 'Enter'}, event)
+
+    expect(wrapper.handleSubmit).toHaveBeenCalled
 
   })
-
 })
