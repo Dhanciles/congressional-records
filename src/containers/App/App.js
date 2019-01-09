@@ -17,10 +17,10 @@ render() {
     return (
       <div className="App">
         <Header /> 
-        <Swith>
-          <Route exact path='/' component={<LandingPage location='/' />}/>
-          <Route path={`${path}`} render={() => <ContentContainer location ='/${path}'/>}/>
-        </Swith>
+        <Switch>
+          <Route exact path='/' component={LandingPage}/>
+          <Route exact path={`${path}`} render={() => <ContentContainer location ={`/${path}`}/>}/>
+        </Switch>
       </div>
     );
   }

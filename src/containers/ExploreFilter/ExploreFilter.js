@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { fetchData } from '../../thunks/fetchData.js'; 
 import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
+import { Link } from 'react-router-dom'; 
 
 export class ExploreFilter extends Component {
   constructor() {
@@ -42,9 +43,9 @@ export class ExploreFilter extends Component {
     const basicExploreItems = ['Recent Votes', 'Recent Bills', 'Upcoming Bills']
     const popularSubjects = ['Immigration', 'Climate', 'Criminal Justice', 'Police Brutality', 'Higher Education', 'Russia', 'Terrorism', 'Crimes Against Women', 'Fires', 'Mental Health', 'Oil and Gas'] 
     
-    const basicList = basicExploreItems.map(item => (<li name={item} onClick={() => this.handleBasicListSelection(item)} key={uuid()} className="basic-item">{item}</li>))
+    const basicList = basicExploreItems.map(item => (<Link to={item}><li name={item} onClick={() => this.handleBasicListSelection(item)} key={uuid()} className="basic-item">{item}</li></Link>))
 
-    const popularList = popularSubjects.map(subject => (<li onClick={() => this.handlePopularListSelection(subject)} name={subject} key={uuid()}className="popular-subject">{subject}</li>))
+    const popularList = popularSubjects.map(subject => (<Link to={subject}><li onClick={() => this.handlePopularListSelection(subject)} name={subject} key={uuid()} className="popular-subject">{subject}</li></Link>))
 
     const defaultRender = (
       <div className="explore-menu">
@@ -78,6 +79,7 @@ export class ExploreFilter extends Component {
       )
   }
 }
+
 
 export const mapDispatchToProps = (dispatch) => ({
   fetchData: (url, query) => dispatch(fetchData(url, query)), 
