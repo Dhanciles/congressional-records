@@ -8,6 +8,7 @@ import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
 import { fetchData } from '../../thunks/fetchData.js'; 
 import { withRouter } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 export class ContentContainer extends Component {
   constructor(props) {
@@ -67,3 +68,12 @@ export const mapDispatchToProps = (dispatch) => ({
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(ContentContainer)
   )
+
+ContentContainer.propTypes = {
+  data: PropTypes.object, 
+  error: PropTypes.bool, 
+  loading: PropTypes.bool, 
+  selection: PropTypes.string, 
+  fetchData: PropTypes.func.isRequired, 
+  updateSelection: PropTypes.func.isRequired
+}

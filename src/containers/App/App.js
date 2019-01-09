@@ -41,7 +41,7 @@ export default withRouter(
 
 App.propTypes = {
   selection: PropTypes.string.isRequired, 
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool
 }
 
 
