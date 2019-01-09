@@ -25,47 +25,44 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <p
-          className="bill-id"
+        <div
+          className="top-level-card"
         >
-          hconres283-110
-        </p>,
-        <p
-          className="chamber"
+          <p
+            className="bill-id"
+          >
+            hconres283-110
+          </p>
+          <p
+            className="chamber"
+          >
+            Chamber - House
+          </p>
+          <p
+            className="commitees"
+          >
+            House Foreign Affairs; Senate Foreign Relations
+          </p>
+          <p
+            className="sponsor"
+          >
+            Rep.Donald M. Payne, NJ
+          </p>
+          <img
+            alt="bookmark"
+            className="bookmark-icon"
+            src="./icons/bookmark.svg"
+          />
+        </div>,
+        <div
+          className="bill-title-container"
         >
-          Chamber - House
-        </p>,
-        <p
-          className="sponsor"
-        >
-          Rep.Donald M. Payne, NJ
-        </p>,
-        <img
-          alt="bookmark"
-          src="./icons/bookmark.svg"
-        />,
-        <h4
-          className="bill-title"
-        >
-          Calling for a peaceful resolution to the current electoral crisis in Kenya.
-        </h4>,
-        <p
-          className="commitees"
-        >
-          House Foreign Affairs; Senate Foreign Relations
-        </p>,
-        <p
-          className="status"
-        >
-           Active - 
-          true
-           
-        </p>,
-        <p
-          className="vote-infromation"
-        >
-          2008-02-07
-        </p>,
+          <h4
+            className="bill-title"
+          >
+            Calling for a peaceful resolution to the current electoral crisis in Kenya.
+          </h4>
+        </div>,
       ],
       "className": "bill-container",
     },
@@ -76,210 +73,115 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "hconres283-110",
-          "className": "bill-id",
-        },
-        "ref": null,
-        "rendered": "hconres283-110",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Chamber - House",
-          "className": "chamber",
-        },
-        "ref": null,
-        "rendered": "Chamber - House",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Rep.Donald M. Payne, NJ",
-          "className": "sponsor",
-        },
-        "ref": null,
-        "rendered": "Rep.Donald M. Payne, NJ",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "alt": "bookmark",
-          "src": "./icons/bookmark.svg",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Calling for a peaceful resolution to the current electoral crisis in Kenya.",
-          "className": "bill-title",
-        },
-        "ref": null,
-        "rendered": "Calling for a peaceful resolution to the current electoral crisis in Kenya.",
-        "type": "h4",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "House Foreign Affairs; Senate Foreign Relations",
-          "className": "commitees",
-        },
-        "ref": null,
-        "rendered": "House Foreign Affairs; Senate Foreign Relations",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
           "children": Array [
-            " Active - ",
-            true,
-            " ",
+            <p
+              className="bill-id"
+            >
+              hconres283-110
+            </p>,
+            <p
+              className="chamber"
+            >
+              Chamber - House
+            </p>,
+            <p
+              className="commitees"
+            >
+              House Foreign Affairs; Senate Foreign Relations
+            </p>,
+            <p
+              className="sponsor"
+            >
+              Rep.Donald M. Payne, NJ
+            </p>,
+            <img
+              alt="bookmark"
+              className="bookmark-icon"
+              src="./icons/bookmark.svg"
+            />,
           ],
-          "className": "status",
+          "className": "top-level-card",
         },
         "ref": null,
         "rendered": Array [
-          " Active - ",
-          true,
-          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "hconres283-110",
+              "className": "bill-id",
+            },
+            "ref": null,
+            "rendered": "hconres283-110",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Chamber - House",
+              "className": "chamber",
+            },
+            "ref": null,
+            "rendered": "Chamber - House",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "House Foreign Affairs; Senate Foreign Relations",
+              "className": "commitees",
+            },
+            "ref": null,
+            "rendered": "House Foreign Affairs; Senate Foreign Relations",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Rep.Donald M. Payne, NJ",
+              "className": "sponsor",
+            },
+            "ref": null,
+            "rendered": "Rep.Donald M. Payne, NJ",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "bookmark",
+              "className": "bookmark-icon",
+              "src": "./icons/bookmark.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
         ],
-        "type": "p",
+        "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "2008-02-07",
-          "className": "vote-infromation",
-        },
-        "ref": null,
-        "rendered": "2008-02-07",
-        "type": "p",
-      },
-    ],
-    "type": "article",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <p
-            className="bill-id"
-          >
-            hconres283-110
-          </p>,
-          <p
-            className="chamber"
-          >
-            Chamber - House
-          </p>,
-          <p
-            className="sponsor"
-          >
-            Rep.Donald M. Payne, NJ
-          </p>,
-          <img
-            alt="bookmark"
-            src="./icons/bookmark.svg"
-          />,
-          <h4
+          "children": <h4
             className="bill-title"
           >
             Calling for a peaceful resolution to the current electoral crisis in Kenya.
           </h4>,
-          <p
-            className="commitees"
-          >
-            House Foreign Affairs; Senate Foreign Relations
-          </p>,
-          <p
-            className="status"
-          >
-             Active - 
-            true
-             
-          </p>,
-          <p
-            className="vote-infromation"
-          >
-            2008-02-07
-          </p>,
-        ],
-        "className": "bill-container",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "hconres283-110",
-            "className": "bill-id",
-          },
-          "ref": null,
-          "rendered": "hconres283-110",
-          "type": "p",
+          "className": "bill-title-container",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Chamber - House",
-            "className": "chamber",
-          },
-          "ref": null,
-          "rendered": "Chamber - House",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Rep.Donald M. Payne, NJ",
-            "className": "sponsor",
-          },
-          "ref": null,
-          "rendered": "Rep.Donald M. Payne, NJ",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "alt": "bookmark",
-            "src": "./icons/bookmark.svg",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
@@ -291,49 +193,187 @@ ShallowWrapper {
           "rendered": "Calling for a peaceful resolution to the current electoral crisis in Kenya.",
           "type": "h4",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "House Foreign Affairs; Senate Foreign Relations",
-            "className": "commitees",
-          },
-          "ref": null,
-          "rendered": "House Foreign Affairs; Senate Foreign Relations",
-          "type": "p",
-        },
+        "type": "div",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="top-level-card"
+          >
+            <p
+              className="bill-id"
+            >
+              hconres283-110
+            </p>
+            <p
+              className="chamber"
+            >
+              Chamber - House
+            </p>
+            <p
+              className="commitees"
+            >
+              House Foreign Affairs; Senate Foreign Relations
+            </p>
+            <p
+              className="sponsor"
+            >
+              Rep.Donald M. Payne, NJ
+            </p>
+            <img
+              alt="bookmark"
+              className="bookmark-icon"
+              src="./icons/bookmark.svg"
+            />
+          </div>,
+          <div
+            className="bill-title-container"
+          >
+            <h4
+              className="bill-title"
+            >
+              Calling for a peaceful resolution to the current electoral crisis in Kenya.
+            </h4>
+          </div>,
+        ],
+        "className": "bill-container",
+      },
+      "ref": null,
+      "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              " Active - ",
-              true,
-              " ",
+              <p
+                className="bill-id"
+              >
+                hconres283-110
+              </p>,
+              <p
+                className="chamber"
+              >
+                Chamber - House
+              </p>,
+              <p
+                className="commitees"
+              >
+                House Foreign Affairs; Senate Foreign Relations
+              </p>,
+              <p
+                className="sponsor"
+              >
+                Rep.Donald M. Payne, NJ
+              </p>,
+              <img
+                alt="bookmark"
+                className="bookmark-icon"
+                src="./icons/bookmark.svg"
+              />,
             ],
-            "className": "status",
+            "className": "top-level-card",
           },
           "ref": null,
           "rendered": Array [
-            " Active - ",
-            true,
-            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "hconres283-110",
+                "className": "bill-id",
+              },
+              "ref": null,
+              "rendered": "hconres283-110",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Chamber - House",
+                "className": "chamber",
+              },
+              "ref": null,
+              "rendered": "Chamber - House",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "House Foreign Affairs; Senate Foreign Relations",
+                "className": "commitees",
+              },
+              "ref": null,
+              "rendered": "House Foreign Affairs; Senate Foreign Relations",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Rep.Donald M. Payne, NJ",
+                "className": "sponsor",
+              },
+              "ref": null,
+              "rendered": "Rep.Donald M. Payne, NJ",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "bookmark",
+                "className": "bookmark-icon",
+                "src": "./icons/bookmark.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
           ],
-          "type": "p",
+          "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "2008-02-07",
-            "className": "vote-infromation",
+            "children": <h4
+              className="bill-title"
+            >
+              Calling for a peaceful resolution to the current electoral crisis in Kenya.
+            </h4>,
+            "className": "bill-title-container",
           },
           "ref": null,
-          "rendered": "2008-02-07",
-          "type": "p",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Calling for a peaceful resolution to the current electoral crisis in Kenya.",
+              "className": "bill-title",
+            },
+            "ref": null,
+            "rendered": "Calling for a peaceful resolution to the current electoral crisis in Kenya.",
+            "type": "h4",
+          },
+          "type": "div",
         },
       ],
       "type": "article",
