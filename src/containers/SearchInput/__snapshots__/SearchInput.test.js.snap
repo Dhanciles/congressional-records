@@ -26,8 +26,9 @@ ShallowWrapper {
           value=""
         />,
         <img
+          alt="magnifying glass"
           className="search-icon"
-          src="../src/icons/search.svg"
+          src="./icons/001-search.svg"
         />,
       ],
       "onSubmit": [Function],
@@ -54,8 +55,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "magnifying glass",
           "className": "search-icon",
-          "src": "../src/icons/search.svg",
+          "src": "./icons/001-search.svg",
         },
         "ref": null,
         "rendered": null,
@@ -79,8 +81,9 @@ ShallowWrapper {
             value=""
           />,
           <img
+            alt="magnifying glass"
             className="search-icon"
-            src="../src/icons/search.svg"
+            src="./icons/001-search.svg"
           />,
         ],
         "onSubmit": [Function],
@@ -107,8 +110,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "magnifying glass",
             "className": "search-icon",
-            "src": "../src/icons/search.svg",
+            "src": "./icons/001-search.svg",
           },
           "ref": null,
           "rendered": null,
