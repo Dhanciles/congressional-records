@@ -38,7 +38,7 @@ export class SearchInput extends Component {
     const searchIcon = './icons/001-search.svg'
     return (
       <form onSubmit={(e) => this.handleSubmit(e)}>
-        <input onChange={this.handleChange}type="text" name="search" value={subject} placeholder="Search"/>
+        <input onChange={this.handleChange}type="text" name="search" className="search-input" value={subject} placeholder="Search"/>
         <img className="search-icon" src={searchIcon} alt='magnifying glass'/>
       </form>
     )
@@ -54,5 +54,5 @@ export default connect(null, mapDispatchToProps)(SearchInput)
 
 SearchInput.propTypes = {
   fetchData: PropTypes.func.isRequired, 
-  updateSelection: PropTypes.func.isRequired
+  updateSelection: PropTypes.func
 }
