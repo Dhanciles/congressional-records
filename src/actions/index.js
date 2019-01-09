@@ -23,3 +23,8 @@ export const setFilter = (filter) => ({
   type: 'SET_FILTER', 
   filter
 })
+
+export const redirect = (check) => ({
+  type: 'REDIRECT', 
+  redirect: check
+})

@@ -4,13 +4,22 @@ import { connect } from 'react-redux';
 import { fetchData } from '../../thunks/fetchData.js'; 
 import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'; 
+import { Redirect, withRouter } from 'react-router-dom'; 
 
 export class SearchInput extends Component {
   constructor() {
     super()
     this.state = {
-      subject:  ''
+      subject:  '',
+      match: false
+    }
+  }
+
+  redirectUser = (text) => {
+    const { subject} = this.state 
+    if (text === subject) {
+      return <Redirect to='/subject'/>
     }
   }
   
@@ -25,6 +34,9 @@ export class SearchInput extends Component {
     e.preventDefault()
     const { subject } = this.state
     this.props.updateSelection(subject)
+    this.props.changeRedirect(true);
+    // this.redirectUser(subject)
+    this.props.history.push(`/${subject}`);
     const newSubject = queryCheck(subject)
     const url = `https://api.propublica.org/congress/v1/bills/subjects/${newSubject}.json`
     await this.props.fetchData(url, newSubject)
@@ -47,10 +59,11 @@ export class SearchInput extends Component {
 
 export const mapDispatchToProps = (dispatch) => ({
   fetchData: (url, query) => dispatch(fetchData(url, query)),
-  updateSelection: (selection) => dispatch(setFilter(selection))
+  updateSelection: (selection) => dispatch(setFilter(selection)),
+  changeRedirect: (bool) => dispatch({type: 'REDIRECT', redirect: bool}),
 })
 
-export default connect(null, mapDispatchToProps)(SearchInput)
+export default withRouter(connect(null, mapDispatchToProps)(SearchInput))
 
 SearchInput.propTypes = {
   fetchData: PropTypes.func.isRequired, 

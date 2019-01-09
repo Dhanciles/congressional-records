@@ -7,7 +7,6 @@ import { LandingPage } from '../../components/LandingPage/LandingPage';
 import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
 import { fetchData } from '../../thunks/fetchData.js'; 
-import { withRouter } from "react-router-dom";
 import PropTypes from 'prop-types'
 
 export class ContentContainer extends Component {
@@ -65,9 +64,8 @@ export const mapDispatchToProps = (dispatch) => ({
 
 
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(ContentContainer)
-  )
+export default connect(mapStateToProps, mapDispatchToProps)(ContentContainer)
+  
 
 ContentContainer.propTypes = {
   data: PropTypes.object, 
