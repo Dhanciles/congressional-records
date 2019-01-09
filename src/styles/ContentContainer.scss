@@ -11,3 +11,9 @@
   background-color: $color-a; 
 }
 
+.inner-content-container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+

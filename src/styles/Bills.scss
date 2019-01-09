@@ -8,9 +8,11 @@
 
 .bill-container {
   background-color:  $color-grey; 
-  height: 200px; 
-  // width: 60%; 
+  height: 20vh; 
+  width: 60%; 
   margin: 20px 0 20px 0;  
+  border-radius: 15px; 
+  padding: 10px; 
 }
 
 .bookmark-icon {

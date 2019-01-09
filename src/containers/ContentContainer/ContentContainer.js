@@ -9,9 +9,6 @@ import { setFilter } from '../../actions/index.js';
 import { fetchData } from '../../thunks/fetchData.js'; 
 import { withRouter } from "react-router-dom";
 
-
-
-
 export class ContentContainer extends Component {
   constructor(props) {
     super(props)
@@ -42,7 +39,9 @@ export class ContentContainer extends Component {
         <article className="search-subject-container">
           <h1>Searched - <span>{this.props.selection}</span></h1>
         </article>
-          {renderedBills}  
+        <div className="inner-content-container">
+          {renderedBills}
+        </div>
       </main>
     )
 
