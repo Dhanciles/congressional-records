@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchData } from '../../thunks/fetchData.js'; 
 import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
-
+import PropTypes from 'prop-types'
 
 export class SearchInput extends Component {
   constructor() {
@@ -51,3 +51,8 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(null, mapDispatchToProps)(SearchInput)
+
+SearchInput.propTypes = {
+  fetchData: PropTypes.func.isRequired, 
+  updateSelection: PropTypes.func.isRequired
+}
