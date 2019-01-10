@@ -47,12 +47,14 @@ export class Bills extends Component {
               <p className="sponsor">{sponsor}</p> 
             </div>
           </div>
-        {/* <div className="bill-title-container">
-          <h4 className="bill-title">{title}</h4>
-        </div> 
-        <div className="icon-container">
-          {icon}
-        </div> */} 
+        <div className="details-container">
+          <div className="icon-container">
+            {icon}
+          </div>  
+          <div className="bill-title-container">
+            <h4 className="bill-title">{title}</h4>
+          </div> 
+        </div>
       </article>
     )
   }
