@@ -7,7 +7,7 @@ import  ContentContainer  from '../ContentContainer/ContentContainer';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { withRouter } from "react-router-dom";
 import PropTypes from 'prop-types'
-import { TrackedBills }  from '../TrackedBills/TrackedBills';
+import TrackedBills  from '../TrackedBills/TrackedBills';
 
 
 
@@ -25,11 +25,11 @@ render() {
       <div className="App">
         <Header /> 
         <Switch>
+          <Route exact path='/favorites' render={() => <TrackedBills location='/favorites'/>}/>
           <Route exact path='/:selection' render={({match: {params: {selection}}, ...props}) => { 
           return  <ContentContainer tacos={selection} {...props} favorites={false}/>
           }}/>
           <Route  exact path='/' component={LandingPage}/>
-          <Route exact path='/favorites' render={() => <TrackedBills location='/favorites'/>}/>
         </Switch>
       </div>
     );

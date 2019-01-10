@@ -12,6 +12,13 @@ export class Bills extends Component {
     }
   }
 
+  componentDidMount() {
+    const { bill, favorites } = this.props
+    favorites.filter(favorite => favorite.billId === bill.billId).length
+      ? this.setState({ selected: !this.state.selected }) 
+      : this.setState({ selected: false })  
+  }
+
   handleFavorites = () => {
     const { addFavorites, favorites, bill, removeFavorites } = this.props
     favorites.filter(favorite => favorite.billId === bill.billId).length
@@ -21,10 +28,11 @@ export class Bills extends Component {
 
   render() {
     const { billId, sponsor, title, committee } =  this.props.bill
-    const icon = <img onClick={this.handleFavorites} className="bookmark-icon" src='./icons/bookmark.svg' alt='bookmark'/>   
+    const icon = <img onClick={this.handleFavorites} className="bookmark-icon" src='./icons/bookmark.svg' alt='bookmark'/> 
+    const color = this.state.selected ? 'tracked-bill-container'  : 'bill-container'
    
     return (
-      <article className="bill-container">
+      <article className={color}>
           <div className="bill-info">
             <p className="bill-id">{billId}</p>
           <div className="chamber-container">

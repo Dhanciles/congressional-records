@@ -14,10 +14,11 @@ export class TrackedBills extends Component {
   render() {
     let contentToRender
 
-    if (this.props.favorites.length > 0 && this.props.location === '/favorites') { 
+    console.log(this.props)
+    if (this.props.favorites && this.props.favorites.length > 0 && this.props.location === '/favorites') { 
       contentToRender = this.props.favorites.map(bill =>  (<Bills key={uuid()} bill={bill}/>))
     } else {
-      contentToRender = (<h1>No Favorites</h1>)
+      contentToRender = (<h1>No Tracked Bills At This Time</h1>)
     }  
     return (
       <main className="content-container">
