@@ -3,8 +3,8 @@
 
 .bill-container {
   display: flex;
-  flex-direction: row; 
-  justify-content: space-around; 
+  // flex-direction: row; 
+  // justify-content: space-around; 
   background-color: $color-grey; 
   border: 8px solid $color-off-white;
   height: 20vh; 
@@ -15,8 +15,8 @@
 }
 .tracked-bill-container {
   display: flex;
-  flex-direction: row; 
-  justify-content: space-around; 
+  // flex-direction: row; 
+  // justify-content: space-around; 
   background-color: $color-off-white; 
   border: 8px solid $color-b;
   height: 20vh; 
@@ -25,10 +25,18 @@
   border-radius: 15px; 
   padding: 20px; 
 }
+.who-container {
+  display: flex; 
+  width: 40%; 
+  // flex-wrap: wrap; 
+  flex-direction: column; 
+  justify-content: space-around; 
+  // justify-content: space-around;
+}
   p {
     font-family: $font-family-b; 
     font-weight: 600; 
-    font-size: 2rem; 
+    font-size: 1.5rem; 
     color: #000000; 
   }
   .icon-container {
@@ -39,30 +47,21 @@
     width: 40px; 
     cursor: pointer;
   }
-  .bill-info {
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-around;
+  .bill-id-container {
+    margin-right: 10px; 
   }
   .chamber-container {
-    display: flex; 
     flex-direction: row; 
   }
-  .sponsor-info {
+  .committees-container {
     display: flex; 
     flex-direction: row; 
-    margin-right: 10px; 
-    padding: 10px; 
-    .committees {
-      font-size: 1rem; 
-      font-weight: 600; 
-      margin-right: 10px; 
-    }
-    .sponsor {
-      font-size: 1rem; 
-      font-weight: 600; 
-    }
+    // margin-right: 10px; 
+    // padding: 10px; 
   }
+  // .sponsor-container {
+
+  // }
   .bill-title-container {
     h4 {
       font-family: $font-family-b; 

@@ -33,22 +33,26 @@ export class Bills extends Component {
    
     return (
       <article className={color}>
-          <div className="bill-info">
-            <p className="bill-id">{billId}</p>
-          <div className="chamber-container">
-            <p className="chamber">Chamber - House</p>
+          <div className="who-container">
+            <div className="bill-id-container">
+              <p className="bill-id">{billId}</p>
+            </div>
+            <div className="chamber-container">
+              <p className="chamber">Chamber - House</p>
+            </div>
+            <div className="committees-container">
+              <p className="committees">{committee}</p>
+            </div> 
+            <div className="sponsor-container">
+              <p className="sponsor">{sponsor}</p> 
+            </div>
           </div>
-          </div>
-         <div className="sponsor-info">
-            <p className="committees">{committee}</p>
-            <p className="sponsor">{sponsor}</p>
-          </div> 
-        <div className="bill-title-container">
+        {/* <div className="bill-title-container">
           <h4 className="bill-title">{title}</h4>
         </div> 
         <div className="icon-container">
           {icon}
-        </div>
+        </div> */} 
       </article>
     )
   }
