@@ -37,12 +37,12 @@ export const trackBill = (billId, query) => ({
   }
 })
 
-export const addFavorites = (billId) => ({
+export const addFavorites = (bill) => ({
   type: 'ADD_FAVORITE', 
-  billId
+  bill
 })
 
-export const removeFavorites = (billId) => ({
+export const removeFavorites = (bill) => ({
   type: 'REMOVE_FAVORITE', 
-  billId
+  bill
 })

@@ -7,26 +7,22 @@ import { trackBill, addFavorites, removeFavorites } from '../../actions/index.js
 export class Bills extends Component {
   constructor() {
     super()
+    this.state = {
+      selected: false
+    }
   }
 
   handleFavorites = () => {
-    const { billId, addFavorites } = this.props
-    addFavorites(billId)
+    const { addFavorites, favorites, bill, removeFavorites } = this.props
+    favorites.filter(favorite => favorite.billId === bill.billId).length
+      ? removeFavorites(bill) 
+      : addFavorites(bill)
   }
 
-  handleRemoveFavorites = () => {
-    const { billId, removeFavorites } = this.props
-    removeFavorites(billId)
-  }
- 
   render() {
-    const { billId, sponsor, title, lastVote, committee, query } =  this.props
-    let icon
-    if (!this.props.favorites.includes(billId)) {
-        icon = <img onClick={() =>  this.handleFavorites()} className="bookmark-icon"src='./icons/bookmark.svg' alt='bookmark'/>  
-    } else {
-      icon = <img onClick={() => this.handleRemoveFavorites()} className="bookmark-icon"src='./icons/bookmark.svg' alt='bookmark'/> 
-    }
+    const { billId, sponsor, title, lastVote, committee, query } =  this.props.bill
+    const icon = <img onClick={this.handleFavorites} className="bookmark-icon" src='./icons/bookmark.svg' alt='bookmark'/>   
+   
     return (
       <article className="bill-container">
         <div className="top-level-card">
@@ -50,8 +46,8 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   trackBill: (id, query) => dispatch(trackBill(id, query)), 
-  addFavorites: (id) => dispatch(addFavorites(id)), 
-  removeFavorites: (id) => dispatch(removeFavorites(id))
+  addFavorites: (bill) => dispatch(addFavorites(bill)), 
+  removeFavorites: (bill) => dispatch(removeFavorites(bill))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Bills)

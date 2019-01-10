@@ -43,7 +43,8 @@ render() {
 export const mapStateToProps = (state) => ({
   selection: state.selection, 
   isLoading: state.isLoading, 
-  redirect: state.redirect
+  redirect: state.redirect, 
+  favorites: state.favorites
 })
 
 export const mapDispatchToProps = (dispatch) => ({

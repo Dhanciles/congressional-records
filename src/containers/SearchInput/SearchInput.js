@@ -40,9 +40,6 @@ export class SearchInput extends Component {
     const newSubject = queryCheck(subject)
     const url = `https://api.propublica.org/congress/v1/bills/subjects/${newSubject}.json`
     await this.props.fetchData(url, newSubject)
-    this.setState({
-      subject: ''
-    })
   }
 
   render() {

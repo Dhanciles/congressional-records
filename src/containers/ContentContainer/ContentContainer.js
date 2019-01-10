@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import  uuid  from 'uuid'; 
 import '../../styles/ContentContainer.scss'; 
 import { connect } from 'react-redux'; 
-import  Bills from '../../components/Bills/Bills.js'; 
+import Bills  from '../../components/Bills/Bills.js'; 
 import { LandingPage } from '../../components/LandingPage/LandingPage';
 import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 
@@ -33,7 +33,7 @@ export class ContentContainer extends Component {
             <LandingPage />
         )
     } else {
-    const renderedBills = this.dataFromProps().map(item => (<Bills key={uuid()} {...item}/>))
+    const renderedBills = this.dataFromProps().map(bill => (<Bills key={uuid()} bill={bill}/>))
      return (
       <main className="content-container">
         <article className="search-subject-container">
