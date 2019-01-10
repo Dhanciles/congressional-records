@@ -20,7 +20,7 @@ export class Bills extends Component {
   }
 
   render() {
-    const { billId, sponsor, title, lastVote, committee, query } =  this.props.bill
+    const { billId, sponsor, title, committee } =  this.props.bill
     const icon = <img onClick={this.handleFavorites} className="bookmark-icon" src='./icons/bookmark.svg' alt='bookmark'/>   
    
     return (

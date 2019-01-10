@@ -7,6 +7,7 @@ import  ContentContainer  from '../ContentContainer/ContentContainer';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { withRouter } from "react-router-dom";
 import PropTypes from 'prop-types'
+import { TrackedBills }  from '../TrackedBills/TrackedBills';
 
 
 
@@ -16,12 +17,6 @@ export class App extends Component {
 }
 
 render() {
-  // let windowPath = window.location.pathname.substring(1).replace('%20', ' ');
-  // console.log('windowPath', windowPath);
-  // console.log('props', this.props.selection);
-  // if (this.props.selection !== windowPath) {
-  //   return <Redirect to={`/${this.props.selection}`}/>
-  // }
   if (this.props.redirect) {
     this.props.changeRedirect(false);
     return <Redirect to={`/${this.props.selection}`}/>
@@ -31,9 +26,10 @@ render() {
         <Header /> 
         <Switch>
           <Route exact path='/:selection' render={({match: {params: {selection}}, ...props}) => { 
-          return  <ContentContainer tacos={selection} {...props}/>
+          return  <ContentContainer tacos={selection} {...props} favorites={false}/>
           }}/>
           <Route  exact path='/' component={LandingPage}/>
+          <Route exact path='/favorites' render={() => <TrackedBills location='/favorites'/>}/>
         </Switch>
       </div>
     );
