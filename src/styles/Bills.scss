@@ -7,7 +7,7 @@
   background-color: $color-grey; 
   border: 8px solid $color-off-white;
   height: 20vh; 
-  width: 50%; 
+  width: 45%; 
   margin: 20px 0 20px 0;  
   border-radius: 15px; 
   padding: 20px; 
@@ -18,7 +18,7 @@
   background-color: $color-off-white; 
   border: 8px solid $color-b;
   height: 20vh; 
-  width: 50%; 
+  width: 45%; 
   margin: 20px 0 20px 0;  
   border-radius: 15px; 
   padding: 20px; 
@@ -64,7 +64,12 @@
     position: relative;
   }
   .bill-title {
-    margin-top: 1rem; 
+    margin-top: 2.5rem; 
+
+  }
+
+  .bill-title-container {
+    margin-top: 15px; 
   }
 
 
