@@ -25,15 +25,21 @@ export class Bills extends Component {
    
     return (
       <article className="bill-container">
-        <div className="top-level-card">
-          <p className="bill-id">{billId}</p>
-          <p className="chamber">Chamber - House</p>
-          <p className="commitees">{committee}</p>
-          <p className="sponsor">{sponsor}</p>
-          {icon}
-        </div>
+          <div className="bill-info">
+            <p className="bill-id">{billId}</p>
+          <div className="chamber-container">
+            <p className="chamber">Chamber - House</p>
+          </div>
+          </div>
+         <div className="sponsor-info">
+            <p className="committees">{committee}</p>
+            <p className="sponsor">{sponsor}</p>
+          </div> 
         <div className="bill-title-container">
           <h4 className="bill-title">{title}</h4>
+        </div> 
+        <div className="icon-container">
+          {icon}
         </div>
       </article>
     )

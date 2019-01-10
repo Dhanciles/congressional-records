@@ -5,9 +5,7 @@ form {
   align-items: center; 
   flex: 1 0; 
   input {
-    // flex: 3;
-    border: border 2px solid $color-grey; 
-    box-shadow: 1px 2px 2px $color-a; 
+    border: none;
     background-color: $color-b; 
     color: $color-off-white; 
     font-family: $font-family-a;
