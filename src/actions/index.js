@@ -28,3 +28,21 @@ export const redirect = (check) => ({
   type: 'REDIRECT', 
   redirect: check
 })
+
+export const trackBill = (billId, query) => ({
+  type: 'TRACK_BILL',
+  trackedBills: {
+    billId, 
+    query
+  }
+})
+
+export const addFavorites = (billId) => ({
+  type: 'ADD_FAVORITE', 
+  billId
+})
+
+export const removeFavorites = (billId) => ({
+  type: 'REMOVE_FAVORITE', 
+  billId
+})

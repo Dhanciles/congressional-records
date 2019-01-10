@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import  uuid  from 'uuid'; 
 import '../../styles/ContentContainer.scss'; 
 import { connect } from 'react-redux'; 
-import { Bills }  from '../../components/Bills/Bills.js'; 
+import  Bills from '../../components/Bills/Bills.js'; 
 import { LandingPage } from '../../components/LandingPage/LandingPage';
 import { queryCheck } from '../../helper/helper.js';
 import { setFilter } from '../../actions/index.js'; 

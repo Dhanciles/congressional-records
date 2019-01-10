@@ -5,7 +5,7 @@ export const cleanBill = (data, query) => {
    case 'Upcoming Bills': 
     return exploreFilterBills(data)
    default: 
-    return searchAndPopularBills(data)
+    return searchAndPopularBills(data, query)
  }
 }
 
@@ -30,14 +30,16 @@ export const exploreAdditionalCleaner = (data) => {
  }, [])
 }
 
-export const searchAndPopularBills = (data) => {
+export const searchAndPopularBills = (data, query) => {
   return data.results.map((item) => ({
     billId: item.bill_id,
     sponsor: `${item.sponsor_title + item.sponsor_name + ', ' + item.sponsor_state}`, 
     title: item.title, 
     committee: item.committees, 
     active: item.active, 
-    lastVote: item.last_vote
+    lastVote: item.last_vote, 
+    tracked: false, 
+    query: query
   }))
 }
 
