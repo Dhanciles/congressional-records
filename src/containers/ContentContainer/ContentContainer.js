@@ -30,10 +30,12 @@ export class ContentContainer extends Component {
   render() {  
     if (this.props.loading) {
         return (
-          <div className="logo-container">
-            <img className="logo"src='./icons/congress.svg' alt='capitol building'/>
-            <h1>Loading...</h1>
-          </div>
+            <div className="loading-container">
+              <div className="logo-container">
+                <img className="logo"src='./icons/congress.svg' alt='capitol building'/>
+              </div>
+              <h1>Loading...</h1>
+            </div>
         )
     } else {
     const renderedBills = this.dataFromProps().map(bill => (<Bills key={uuid()} bill={bill}/>))

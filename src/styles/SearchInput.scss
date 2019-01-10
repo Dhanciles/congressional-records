@@ -3,20 +3,21 @@
 form {
   display: flex; 
   align-items: center; 
+  flex: 1 0; 
   input {
-    border: none; 
+    // flex: 3;
+    border: border 2px solid $color-grey; 
+    box-shadow: 1px 2px 2px $color-a; 
     background-color: $color-b; 
     color: $color-off-white; 
     font-family: $font-family-a;
     font-weight: 600; 
-    font-size: 2rem; 
+    font-size: 3rem; 
     text-indent: 2rem; 
-    width: 300px; 
+    padding: 10px; 
+    margin-right: 5px; 
+    width: 30%; 
+    height: 80%; 
     &::placeholder { color: $color-off-white} 
   } 
-  .search-icon {
-    height: 30px; 
-    width: 40px; 
-    margin-top: 4px; 
-  }
 }

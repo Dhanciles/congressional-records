@@ -48,7 +48,6 @@ export class SearchInput extends Component {
     return (
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <input onChange={this.handleChange}type="text" name="search" className="search-input" value={subject} placeholder="Search"/>
-        <img className="search-icon" src={searchIcon} alt='magnifying glass'/>
       </form>
     )
   }
