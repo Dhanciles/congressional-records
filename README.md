@@ -26,6 +26,6 @@
 ![wireframe2](public/images/wireframe-2.png)
 
 ## Application 
-![webpage](public/images/web-page.png)
+![webpage](public/images/app.png)
 
 
