@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { shallow } from 'enzyme'; 
-import { Bills }  from './Bills'
+import { Bills, mapStateToProps }  from './Bills'
 
 describe('Bills', () => {
   it('should match the snapshot', () => {
@@ -21,5 +21,65 @@ describe('Bills', () => {
                             />)
 
     expect(wrapper).toMatchSnapshot()
+  })
+  describe('mapStateToProps', () => {
+    it('should return an object with a favorites array', () => {
+      const mockState = {
+        favorites: [
+          {
+            billId: "hr6063-110", 
+            sponsor: "Rep.Mark Udall, CO", 
+            title: "To authorize the programs of the National Aeronautics and Space Administration, and for other purposes.", 
+            committee: "House Science and Technology; Senate Commerce, Science, and Transportation",
+            active: null, 
+            lastVote: "2008-06-18", 
+            tracked: true, 
+            query: "climate"
+          }, 
+          {
+            billId: "hr6089-111", 
+            sponsor: "Rep.Mark Jose, UT", 
+            title: "To authorize the programs for immigration.", 
+            committee: "Senate Commerce",
+            active: null, 
+            lastVote: "2009-06-19", 
+            tracked: true, 
+            query: "immigration"
+          }
+        ], 
+        loading: false, 
+        error: false, 
+        selection: "climate", 
+        redirect: false
+      }
+      const expected = {
+        favorites: [
+          {
+            billId: "hr6063-110", 
+            sponsor: "Rep.Mark Udall, CO", 
+            title: "To authorize the programs of the National Aeronautics and Space Administration, and for other purposes.", 
+            committee: "House Science and Technology; Senate Commerce, Science, and Transportation",
+            active: null, 
+            lastVote: "2008-06-18", 
+            tracked: true, 
+            query: "climate"
+          }, 
+          {
+            billId: "hr6089-111", 
+            sponsor: "Rep.Mark Jose, UT", 
+            title: "To authorize the programs for immigration.", 
+            committee: "Senate Commerce",
+            active: null, 
+            lastVote: "2009-06-19", 
+            tracked: true, 
+            query: "immigration"
+          }
+        ]
+      }
+
+      const mappedProps = mapStateToProps(mockState)
+
+      expect(mappedProps).toEqual(expected)
+    })
   })
 })
