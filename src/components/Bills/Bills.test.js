@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { shallow } from 'enzyme'; 
-import { Bills, mapStateToProps }  from './Bills'
+import { Bills, mapStateToProps, mapDispatchToProps }  from './Bills'; 
+import { trackBill } from '../../actions/index.js'; 
 
 describe('Bills', () => {
   it('should match the snapshot', () => {
@@ -80,6 +81,27 @@ describe('Bills', () => {
       const mappedProps = mapStateToProps(mockState)
 
       expect(mappedProps).toEqual(expected)
+    })
+  })
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with trackBill action when handleFavorites is called', () => {
+      const mockDispatch = jest.fn()
+      const mockBill =  {
+        billId: "hr6089-111", 
+        sponsor: "Rep.Mark Jose, UT", 
+        title: "To authorize the programs for immigration.", 
+        committee: "Senate Commerce",
+        active: null, 
+        lastVote: "2009-06-19", 
+        tracked: true, 
+        query: "immigration"
+      }
+      const actionToDispatch = trackBill("hr6089-111", "immigration")
+
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.handleFavorites()
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
 })
